@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="style.css">
     <title>Text to speech</title>
 </head>
-<body>
-    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
-    <h1>
-        Text to speech converter 
-    </h1>
-    <textarea id="txt" name="text"></textarea>
-    <br>
-    <p>*Takes few second to process. Have patience</p>
-    <input class="btn" type="button" onclick="textSpeak()" value="submit"> 
 
-    
-    <script>
-        function textSpeak(){
-            var text = document.getElementById("txt").value;
-            responsiveVoice.speak(text);
-        }
-    </script>
+<body class="bg-black ">
+    <script type="text/javascript" src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="./index.js" defer></script>
+    <div class="flex justify-center items-center h-30 mt-10">
+        <div class="flex flex-row h-44 w-72 mr-80">
+            <img src="./play.png" class="h-24 w-24" />
+            <h1 class="font-extrabold text-4xl text-green-500 w-44 whitespace-nowrap">
+                Text to speech converter
+            </h1>
+        </div>
+    </div>
+
+    <div class="flex flex-col justify-center items-center">
+        <textarea class="bg-slate-900 text-white p-10 rounded-4xl" id="txt" name="text"></textarea>
+        <br>
+        <!-- <p>*Takes few second to process. Have patience</p> -->
+        <div class="flex flex-col w-64 gap-4 mb-10 mr-40">
+            <input class="btn" type="button" onclick="textSpeak()" value="📤">
+            <input id="pauseBtn" class="btn" type="button" onclick="pauseOrResumeSpeech()" value="▐▐">
+        </div>
+    </div>
+
 </body>
+
 </html>
